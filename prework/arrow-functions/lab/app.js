@@ -114,13 +114,12 @@ let sum = (a, b, c, d) => a + b + c + d;
 console.log(sum(1, 2, 3, 4));
 
 
-let objectLit = function() {
-  return {
-    key1: 'value1',
-    key2: 'value2',
-    key3: 'value3',
-  };
-};
+let objectLit = () => ({
+  key1: 'value1',
+  key2: 'value2',
+  key3: 'value3',
+});
+
 
 // TODO: Uncomment the following line of code to see the output in the browser console
 console.log(objectLit());
@@ -142,7 +141,7 @@ let message = (name) => `Hello, ${name}!`;
 console.log(message('Allie'));
 
 
-let Student = function(name, age, hometown) {
+let Student = function (name, age, hometown) {
   this.name = name;
   this.age = age;
   this.hometown = hometown;
@@ -164,15 +163,13 @@ Student.prototype.greeting = function() {
 
 // TODO: Uncomment the following line of code to see the output in the browser console
 // Note that the arrow function will cause this method to break!
-// console.log(joe.greeting());
+console.log(joe.greeting());
 
 // TODO: After viewing the previous console.log(), return the code to a working state.
 
 
 
-Student.courseName = function() {
-  return 'This student is enrolled in Code 301.';
-};
+Student.courseName = () => 'This student is enrolled in Code 301.';
 
 // TODO: Uncomment the following line of code to see the output in the browser console
 console.log(Student.courseName());
@@ -195,8 +192,8 @@ console.log(joe.scopeArrow());
 
 // TODO: Write a COMMENT below to answer the following questions.
 // 1. What is "this" when joe.scope() is invoked?
-//
+// "This" is undefined when joe.scope() is invoked.
 // 2. What is "this" when joe.scopeArrow() is invoked?
-//
+//"This" is undefined with joe.scoreArrao() is invoked. 
 // 3. Explain why "this" is different when an arrow function is used.
-//
+// "This" is different when an arrow function is used because retain the "this" value of the enclosing functional scope, which makes arrow functions not work when used with constructors or prototype methods. 
