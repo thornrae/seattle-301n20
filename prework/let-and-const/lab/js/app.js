@@ -39,8 +39,8 @@ function displayPics(){
   // Caused an error because let is inside the code block which scopes it within that code block causing any reference out of the code block to give error message
   console.log(viewed);
 
-  for (const i = 0; i < 3; i++){
-    const temp = viewed.shift();
+  for (let i = 0; i < 3; i++){
+    let temp = viewed.shift();
     pics[i].src = allProducts[temp].path;
     pics[i].id = allProducts[temp].name;
     allProducts[temp].views += 1;
@@ -127,7 +127,7 @@ if(localStorage.busmall){
   allProducts = JSON.parse(localStorage.busmall);
 } else {
   console.log('There is no local storage data; initialize app by creating instances');
-  for(const i = 0; i < names.length; i++) {
+  for(let i = 0; i < names.length; i++) {
     new Product(names[i]);
   }
 }
